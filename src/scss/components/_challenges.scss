@@ -1,0 +1,223 @@
+.challenges {
+  background-color: $white;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -1px;
+    border-top: 150px solid $dark-blue;
+    border-right: 100vw solid transparent;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    border-bottom: 150px solid $dark-blue;
+    border-right: 100vw solid transparent;
+  }
+
+
+  &__logo {
+    max-width: 420px;
+
+    .white-style-path {
+      fill: $blue;
+    }
+  }
+
+  &__inner {
+    .title {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__card {
+    width: 33.3%;
+    max-width: 512px;
+    height: 650px;
+    //height: 68.4%;
+    z-index: 1;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    flex-direction: column;
+
+    &:nth-child(1) {
+    }
+
+    &:nth-child(even) {
+      margin-top: -60px;
+    }
+
+    &:nth-child(3) {
+    }
+
+    &__link {
+      margin: auto 0;
+    }
+
+    &__title {
+      margin-bottom: 0;
+    }
+  }
+
+  &__cards {
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin-top: 30px;
+
+    &.cards-4 {
+      .challenges__card {
+        width: 25%;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      background: url("../img/svg/map-line.svg") no-repeat;
+      background-size: contain;
+      left: 0;
+      top: -50px;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      max-height: 930px;
+    }
+  }
+
+  @media screen and(max-width: 1680px) {
+    &__card {
+      height: 550px;
+      z-index: 1;
+      padding: 40px;
+    }
+    &__logo {
+      max-width: 380px;
+    }
+    &__cards {
+      &::after {
+        background-position: bottom;
+        background-size: 100%;
+      }
+    }
+  }
+  @media screen and(max-width: 1439px) {
+    &__logo {
+      padding-top: 20px;
+      max-width: 300px;
+
+      svg {
+        height: auto;
+      }
+    }
+    &__card {
+      height: 500px;
+
+      &:nth-child(even) {
+        margin-top: -40px;
+      }
+    }
+    &__cards {
+      &::after {
+        background-position: center;
+        background-size: 86%;
+        height: auto;
+      }
+
+      &.cards-4 {
+        .challenges__card {
+          height: 400px;
+        }
+      }
+    }
+  }
+  @media screen and(max-width: 1280px) {
+    &__cards {
+      &::after {
+        top: 5px;
+      }
+    }
+  }
+  @media screen and(max-width: 1024px) {
+    &__logo {
+      max-width: 240px;
+    }
+    &__inner .title {
+      margin-top: 15px;
+    }
+    &__cards {
+      flex-direction: column;
+      padding-top: 0;
+
+      &.cards-4 {
+        flex-direction: row;
+        padding-top: 0;
+        flex-wrap: wrap;
+
+        .challenges__card {
+          width: 49%;
+          margin: 0.5%;
+        }
+      }
+
+      &::after {
+        top: 50%;
+        width: 95vw;
+        transform: translateY(-50%);
+      }
+    }
+    &__card {
+      width: 50%;
+      padding: 60px 40px 40px;
+
+      &:nth-child(1) {
+        margin-right: auto;
+      }
+
+      &:nth-child(2) {
+        margin: 30px auto;
+      }
+
+      &:nth-child(3) {
+        margin-left: auto;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &::before {
+      border-top: 100px solid $dark-blue;
+    }
+    &::after {
+      border-bottom: 100px solid $dark-blue;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    &__logo {
+      max-width: 200px;
+      padding-top: 40px;
+    }
+    &__cards {
+      margin: 0;
+
+      &.cards-4 {
+        flex-direction: column;
+
+        .challenges__card {
+          width: 100%;
+        }
+      }
+    }
+    &__card {
+      width: 100%;
+      height: 420px;
+    }
+  }
+}

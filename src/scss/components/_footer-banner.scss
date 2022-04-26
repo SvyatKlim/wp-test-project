@@ -1,0 +1,43 @@
+.footer-banner {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -1px;
+    border-top: 150px solid $dark-blue;
+    border-left: 100vw solid transparent;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    border-bottom: 150px solid $dark-blue;
+    border-right: 100vw solid transparent;
+  }
+
+  &__decor {
+    top: 0;
+  }
+
+  &__img {
+    img {
+      min-height: 500px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &::before {
+      border-top: 100px solid $dark-blue;
+    }
+
+    &::after {
+      border-bottom: 100px solid $dark-blue;
+    }
+  }
+
+}

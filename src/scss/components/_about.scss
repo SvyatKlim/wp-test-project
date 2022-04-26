@@ -1,0 +1,215 @@
+.about {
+  position: relative;
+  min-height: 500px;
+  margin-top: -150px;
+  overflow: hidden;
+
+  &:before {
+    display: block;
+    top: 0;
+    right: 0;
+    content: '';
+    position: absolute;
+    border-bottom: 150px solid $dark-blue;
+    border-left: 100vw solid transparent;
+  }
+
+  &:after {
+    display: block;
+    top: 90px;
+    right: 0;
+    content: '';
+    position: absolute;
+    background-image: url("../img/svg/map.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 1130px;
+    height: 100vh;
+    width: 80%;
+  }
+
+  .container {
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__logo svg {
+    max-width: 170px;
+    height: auto;
+    margin-bottom: 45px;
+  }
+
+  &__info {
+    max-width: 615px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    max-width: 615px;
+
+    &.info-arrow {
+      margin-top: 40px;
+      max-width: unset;
+    }
+  }
+
+  &__columns {
+    display: flex;
+    margin-top: 20px;
+
+    &__info {
+      width: 42.2%;
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .title {
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  &__images {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__wrapper {
+      width: 54%;
+    }
+  }
+
+
+  &__img {
+    margin-bottom: 20px;
+    max-height: 320px;
+
+    &:nth-child(1) {
+      width: 46%;
+      padding-left: 4%;
+      padding-top: 40px;
+      margin-right: 18px;
+    }
+
+    &:nth-child(2) {
+      width: 50.6%;
+      max-height: 300px;
+    }
+
+    &:nth-child(3) {
+      padding-bottom: 40px;
+      padding-right: 16px;
+      width: 61%;
+    }
+
+    &:nth-child(4) {
+      width: 38.2%;
+    }
+  }
+
+  @media screen and (min-width: 1921px) {
+    &::before {
+      top: 2px;
+    }
+  }
+  @media screen and (max-width: 1680px) {
+    &:after {
+      background-size: cover;
+      height: 85vh;
+      width: 61%;
+    }
+    .arrow {
+      margin-top: 80px;
+      max-width: 615px;
+      padding-left: 21%;
+      justify-content: flex-start;
+
+      &.info-arrow {
+        margin: 80px auto 0;
+        padding: 0;
+      }
+    }
+    &__info {
+      max-width: 500px;
+    }
+    &__logo svg {
+      max-width: 150px;
+    }
+  }
+  @media screen and(max-width: 1024px) {
+    &::after {
+      height: 29vh;
+      width: 48%;
+      top: 152px;
+    }
+    .arrow {
+      margin-top: 40px;
+      max-width: unset;
+      padding-left: 0;
+      justify-content: center;
+
+      &.info-arrow {
+        margin: 40px auto 20px;
+      }
+    }
+    &__columns {
+      flex-direction: column;
+
+      &__info {
+        width: 100%;
+      }
+    }
+    &__images__wrapper {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    &__logo svg {
+      max-width: 120px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    &::before {
+      border-bottom: 121px solid #213847;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    &__img:nth-child(n) {
+      width: 100%;
+      padding: 0;
+      margin: 0 0 10px;
+      max-height: 280px;
+    }
+    &__images {
+      &__wrapper {
+        margin-bottom: 20px;
+      }
+    }
+    &__columns__info .title {
+      margin-bottom: 20px;
+    }
+    &::after{
+      height: 303px;
+      width: 389px;
+      top: 102px;
+      right: 0;
+    }
+    &:before {
+      border-bottom: 121px solid $dark-blue;
+      border-left: 122vw solid transparent;
+    }
+  }
+  @media screen and (max-width: 380px) {
+    &::after{
+      height: 11%;
+      width: 81%;
+      top: 153px;
+    }
+  }
+}

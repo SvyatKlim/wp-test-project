@@ -1,0 +1,205 @@
+.donate {
+  background-color: $white;
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+  }
+
+  &__decor {
+    &--top {
+    }
+
+    &--bottom {
+      width: 100%;
+      height: 66.5vh;
+      position: relative;
+      margin-top: -12vh;
+      max-height: 624px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("../img/svg/hands-bg.svg") no-repeat;
+      }
+    }
+
+  }
+
+  &__title {
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__description {
+    max-width: 726px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+  }
+
+  &__link {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+
+    &__logo {
+      display: flex;
+    }
+  }
+
+  &__quote {
+    background-color: $dark-blue;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &__text {
+      max-width: 950px;
+      text-align: center;
+      font-weight: 600;
+      margin: 0 0 20px;
+      position: relative;
+
+      &::before {
+        content: url("../img/svg/quote-break-down.svg");
+        position: absolute;
+        top: -30px;
+        left: -53px;
+      }
+
+      &::after {
+        content: url("../img/svg/quote-break-top.svg");
+        position: absolute;
+        bottom: -15px;
+        right: 5px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1921px) {
+    &__decor--bottom::before {
+      top: 40px;
+      left: -1px;
+      right: -6px;
+    }
+  }
+  @media screen and (max-width: 1680px) {
+    &__decor--bottom {
+      height: 77.5vh;
+    }
+    &__title {
+      svg {
+        width: 80%;
+        margin: 0 auto;
+        height: auto;
+      }
+    }
+  }
+  @media screen and (max-width: 1439px) {
+    &__decor--bottom::before {
+      background-position: top;
+    }
+    &__quote {
+      padding-top: 70px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    &__quote__text {
+      max-width: 630px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+    &__decor--bottom {
+      margin-top: -6vh;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    &__quote {
+      padding-top: 40px;
+
+      &__text {
+        &::before {
+          top: -22px;
+          left: -39px;
+          transform: scale(0.7);
+        }
+
+        &::after {
+          transform: scale(0.7);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &__link {
+      .btn-donate {
+        padding: 14px 40px;
+      }
+
+      &__logo {
+        width: 85%;
+      }
+    }
+    &__decor--bottom {
+      height: 50.5vh;
+
+      &::before {
+        background-size: 200%;
+      }
+    }
+    &__quote {
+      padding-top: 20px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &__title {
+      margin-top: 0;
+    }
+    &__quote__text {
+      line-height: 1.3;
+      margin-right: -10px;
+      padding-left: 10px;
+
+      &::before {
+        left: -29px;
+      }
+    }
+    &__decor--bottom {
+      height: 280px;
+      margin-top: -40px;
+      margin-bottom: -2px;
+
+      &::before {
+        background-size: 170%;
+        background-position: bottom;
+      }
+    }
+  }
+  @media screen and (max-width: 480px) {
+    &__quote {
+      &__text {
+        padding-left: 0;
+
+        &::before {
+          top: -23px;
+          left: -33px;
+          transform: scale(0.6);
+        }
+
+        &::after {
+          bottom: -31px;
+          right: -7px;
+          transform: scale(0.6);
+        }
+      }
+    }
+  }
+}

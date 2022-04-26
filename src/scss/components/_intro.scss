@@ -1,0 +1,84 @@
+.intro {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  max-height: 950px;
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  color: $white;
+
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    svg {
+      width: 90%;
+      height: auto;
+    }
+  }
+
+  &::after {
+    content: url("../img/svg/scroll-img.svg");
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 0.8s;
+
+    .loaded & {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 1680px) {
+    &__inner svg {
+      width: 80%;
+    }
+    &::after {
+      transform: translateX(-50%) scale(0.9);
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    background-size: cover;
+    &__inner svg {
+      width: 70%;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    margin-top: -22px;
+    &__inner svg {
+      width: 60%;
+    }
+  }  @media screen and (max-width: 768px) {
+  &::after {
+    opacity: 1;
+  }
+}
+  @media screen and (max-width: 576px) {
+    &__inner {
+      h1 {
+        text-align: center;
+      }
+
+      svg {
+        width: 40%;
+        margin-bottom: 20px;
+      }
+    }
+    &::after {
+      bottom: 20px;
+    }
+  }
+}

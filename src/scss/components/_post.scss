@@ -1,0 +1,142 @@
+.single-post {
+  .header__logo {
+    display: none;
+  }
+
+  .header {
+    padding-top: 30px;
+  }
+}
+
+.post {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  &__image {
+    width: 58%;
+    height: 100vh;
+  }
+
+  &__right {
+    width: 42%;
+    padding: 8vh 90px 90px 77px;
+    position: relative;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  &__after-title {
+    text-align: center;
+    margin-bottom: 60px
+  }
+
+  &__before-title {
+    text-align: center;
+  }
+
+  &__content {
+    margin-bottom: 44px;
+    ul{
+      margin-bottom: 30px;
+    }
+  }
+
+  &__decor {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    svg {
+      height: auto;
+      max-width: 300px;
+      width: 50%;
+      margin-right: -6%;
+      margin-top: 16%;
+
+      &.post-line {
+        position: absolute;
+        top: -86%;
+        left: -33%;
+        width: 89%;
+        max-width: unset;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
+
+    &__wrapper {
+      position: relative;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    &__right {
+      padding: 45px 56px 45px 45px;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    &__right {
+      width: 50%;
+    }
+    &__image {
+      width: 50%;
+    }
+    &__decor svg {
+      width: 47%;;
+      margin-top: 6%;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    overflow: auto;
+    &__right {
+      width: 100%;
+      padding: 35px 70px 70px;
+    }
+    &__image {
+      width: 100%;
+      max-height: 45vh;
+
+      img {
+        object-position: top;
+      }
+    }
+    &__decor {
+      svg.post-line {
+        top: -97%;
+        left: -16%;
+        width: 89%;
+      }
+    }
+  }
+  @media screen and (max-width: 576px) {
+    &__right {
+      padding: 30px;
+    }
+    &__decor {
+      svg {
+        width: 41%;
+        margin-right: -3%;
+        margin-top: 9%;
+
+        &.post-line {
+          top: -103%;
+          left: -11%;
+          width: 78%;
+        }
+      }
+    }
+    &__after-title {
+      margin-bottom: 30px;
+    }
+  }
+}

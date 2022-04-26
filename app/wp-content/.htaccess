@@ -1,0 +1,20 @@
+#AuthType Basic
+#AuthName "Password Protected"
+#AuthUserFile /home/bambuky/bambus.com.ua/tests/psychologist/.htpasswd
+#Require valid-user
+#Satisfy All
+# BEGIN WordPress
+# Директиви (рядки) між `BEGIN WordPress` і `END WordPress`
+# створені автоматично і підлягають змінам тільки через фільтри WordPress.
+# Зміни зроблені вручну між цими маркерами будуть перезаписані.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+

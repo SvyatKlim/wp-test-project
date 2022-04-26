@@ -1,0 +1,39 @@
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  padding-top: 30px;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  &__logo {
+    display: block;
+    max-width: 124px;
+    max-height: 84px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1439px) {
+    &__logo {
+      width: 100px;
+      max-height: unset;
+      display: flex;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    padding-top: 50px;
+    &__logo {
+      width: 80px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    &__logo {
+      width: 60px;
+    }
+  }
+}
